@@ -1,0 +1,174 @@
+*{padding: 0;margin: 0}
+body{
+font-family: Calibri, sans-serif;
+background: url('images/mainbg.jpg');
+background-position: top center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: inherit;
+}
+.main{
+width: 970px;
+padding: 0 20px;
+margin: 0 auto;
+background: #fff;
+}
+.header{
+height: 170px;
+padding: 5px 20px;
+border-bottom: 10px solid black;
+}
+
+.header-logo{
+margin: 10px 20px;
+float: left;
+}
+
+.header .header-logo-img{
+width: 120px;
+margin-left: 40px;
+}
+.header .header-cinema{
+font-weight: bold;
+color: #333;
+letter-spacing: 14px;
+margin-left: 38px;
+}
+
+.header-quick-book{
+margin: 30px;
+padding: 40px 10px;
+position: relative;
+width: 550px;
+float: right;
+}
+.dropdown-div{
+margin-right: 10px;
+cursor: pointer;
+position: relative;
+border: 1px solid black;
+width: 200px;
+float: left;
+}
+.quickbook-input-box{
+padding: 5px;
+border: none;
+outline: none;
+float: left;
+width: 160px;
+}
+.dropdown-list{
+position: absolute;
+border: 1px solid black;
+width: inherit;
+top: 26px;
+left: -1px;
+display: none;
+z-index: 99;
+}
+ul{list-style: none;background: #fff;}
+.header-quick-book li{padding: 3px 5px;}
+.header-quick-book li:hover{
+color: #fff;
+background: red url('images/red.png');
+}
+img.down-arrow{height: 27px;float: right;}
+.quick-book-submit{
+background: red url('images/red.png');
+padding: 5px 10px;
+color: #fff;
+font-weight: 100;
+font-size: 1.1em;
+float: left;
+}
+.fleft{float: left;}
+.fright{float: right;}
+.clearfix{clear: both;}
+
+.content{min-height: 500px;}
+.content .col{
+margin-top: 20px;
+margin-bottom: 20px;
+line-height: 1.5;
+width: 440px;
+}
+
+.content .col h2{
+color: rgb(199,3,3);
+font-family: Trebuchet MS;
+font-weight: normal;
+text-transform: uppercase;
+letter-spacing: -1px;
+border-bottom: 2px solid black;
+}
+.movie-box{margin-top: 10px;}
+.movie-box img{
+margin: 8px;
+width: 130px;
+height: 195px;
+float: left;
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+transition: all 0.15s ease-in-out;
+}
+.movie-box img:hover{ 
+-moz-transform: scale(1.15);
+-webkit-transform: scale(1.15);
+transform: scale(1.15);
+}
+
+a{color: rgb(199,3,3);font-size: 0.9em;}
+
+.footer{
+min-height: 50px;
+border-top: 15px solid black;
+padding-top: 30px;
+}
+.copyright-notice{
+text-align: center;
+font-size: 0.8em;
+}
+.movie-info{width: 520px!important;}
+.show-times{width: 360px!important;}
+.show-times div{margin: 20px;float: left;}
+.show-times a{color: #444;}
+#movie-poster{
+width: 230px;
+height: 350px;
+padding: 5px 0px;
+float: left;
+}
+#movie-details{
+font-size: 0.9em;
+width: 250px;
+margin: 20px 10px;
+float: left;
+}
+#movie-details div{margin-bottom: 20px;}
+#movie-details b{width: 40%;}
+#movie-details em{width: 60%;float: right;}
+.movie-info h4{
+padding-top: 10px;
+font-size: 1.04em;
+font-family: "Trebuchet MS",Helvetica, sans-serif;
+}
+#seat-selector{width: 700px;height: 430px; background-color: #ddd;margin: 20px auto;}
+.r{margin: 10px auto;width: 540px;}
+.c{float: left;margin: 20px;width: 20px; height: 20px;background-color: #fff;cursor: pointer;}
+.screen{width: 500px; margin: 50px auto;height: 10px;background-color: rgb(105,83,35);}
+
+.dark-overlay{width: 100%; height: 100%; position: fixed; top: 0; background-color: black; opacity: 0.6;z-index: 10;}
+
+#ticket-confirmation{
+z-index: 15;
+height: 400px;
+width: 300px;
+position: absolute;
+top: 50%;
+left: 50%;
+margin-left: -150px;
+margin-top: -200px;
+background-color: white;
+}
