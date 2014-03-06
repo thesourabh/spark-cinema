@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Movie - Spark Cinema</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="keywords" content="Spark Cinemas, Movie Tickets, Online Booking, Online Movie Tickets" />
+		<meta name="description" content="Watch the latest movies at Spark Cinema. Book your tickets now." />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<!-- Header -->
+			<div class="header">
+				<a href="index.html"><div class="header-logo">
+					<img alt="picture" class="header-logo-img" src="images/logo.gif" />
+					<div class="header-cinema">CINEMA</div>
+				</div></a>
+				<div class="header-quick-book">
+					<div class="dropdown-div"><!-- Movie Name -->
+						<input type="text" class="quickbook-input-box" id="select-movie-name" placeholder="Select Movie" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleMovieDropdown()">
+						<div class="dropdown-list" id="dropdown-movie-list">
+							<ul>
+								<li onClick="selectedMovie(this.innerHTML,1)">Dhoom: 3 (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML,2)">The Hobbit (3D) (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML,3)">Frozen (U)</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="dropdown-div"><!-- Movie Date -->
+						<input type="text" class="quickbook-input-box" id="select-movie-date" placeholder="Select Date" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleDateDropdown()">
+						<div class="dropdown-list" id="dropdown-date-list">
+							<ul>
+								<li onClick="selectedDate(this.innerHTML,1)">Wednesday, 25th December</li>
+								<li onClick="selectedDate(this.innerHTML,2)">Thursday, 26th December</li>
+								<li onClick="selectedDate(this.innerHTML,3)">Friday, 27th December</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<a href="javascript:window.location.href='movie.html?m='+m+'&d='+d"><div class="quick-book-submit">Book Now</div></a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+			<!-- Header close -->
+			<!-- Content body -->
+			<div class="content">
+				<div class="col fleft movie-info">
+					<h2>Dhoom: 3 (U/A)</h2>
+					<img alt="picture" src="images/posters/00001.jpg" id="movie-poster" />
+					<div id="movie-details">
+						<div><b>Release Date</b><em>December 20, 2013</em></div>
+						<div><b>Running Time</b><em>2 hr 52 min</em></div>
+						<div><b>Director</b><em>Vijay Krishna Acharya</em></div>
+						<div><b>Genre</b><em>Action</em></div>
+						<div><b>Cast</b><em>Aamir Khan, Abhishek Bachchan, Uday Chopra</em></div>
+					</div>
+					<div class="clearfix">
+					<h4>Synopsis</h4>
+					<em>To avenge his father's death, a circus entertainer trained in magic and acrobatics turns 
+					thief to take down a corrupt bank in Chicago. Two cops from Mumbai are assigned to the case.</em>
+					</div>
+				</div>
+				<div class="col fright show-times">
+					<h2>Show Times</h2>
+					<script type="text/javascript">
+					function bookTickets(_t) {
+						t = _t;
+						window.location.href = "booking.html?m=" + m + "&d=" + d + "&t=" + t;
+					}
+					</script>
+					<a onclick="bookTickets(1)"><div>10:10</div></a>
+					<a onclick="bookTickets(2)"><div>1:15</div></a>
+					<a onclick="bookTickets(3)"><div>4:20</div></a>
+					<a onclick="bookTickets(4)"><div>7:30</div></a>
+					<a onclick="bookTickets(5)"><div>10:40</div></a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!-- Content body close -->
+			<!-- Footer -->
+			<div class="footer">
+				<div class="copyright-notice">Copyright &copy; 2014 Spark Cinema. All Rights Reserved.</div>
+			</div>
+			<!-- Footer close -->
+		</div>
+	</body>
+</html>

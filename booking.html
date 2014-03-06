@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Booking - Spark Cinema</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="keywords" content="Spark Cinemas, Movie Tickets, Online Booking, Online Movie Tickets" />
+		<meta name="description" content="Watch the latest movies at Spark Cinema. Book your tickets now." />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css">
+		
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript">
+		var seats = 0;
+		var cost = 0;
+		function closeTicketWindow() {
+            document.getElementById('ticket-confirmation').style.display='none';
+            document.getElementById('dark-overlay').style.display='none';
+		}
+		function toggleSeat(seat) {
+			if(seat.style.backgroundColor == "green")
+				seat.style.backgroundColor = "#fff";
+			else
+				seat.style.backgroundColor = "green";
+		}
+		function createReceipt() {
+			seats = countSeats();
+			if (seats < 1)
+			{
+				alert("No seats selected.");
+				return false;
+			}
+			cost = seats * 100;
+			document.getElementById('ticket-todays-date').innerHTML = calcDateFormat(new Date());
+			document.getElementById('ticket-number-seats').innerHTML = seats;
+			document.getElementById('ticket-movie-name').innerHTML = document.getElementById('dropdown-movie-list').children[0].children[m-1].innerHTML;
+			document.getElementById('ticket-movie-date').innerHTML = document.getElementById('dropdown-date-list').children[0].children[d-1].innerHTML;
+			var movTime = "10:10 AM";
+			switch(t) {
+				case '1': movTime = "10:10 AM";
+				break;
+				case '2': movTime = "1:15 PM";
+				break;
+				case '3': movTime = "4:20 PM";
+				break;
+				case '4': movTime = "7:30 PM";
+				break;
+				case '5': movTime = "10:40 PM";
+				break;
+			
+			}
+			document.getElementById('ticket-movie-time').innerHTML = movTime;
+			document.getElementById('total-cost').innerHTML = "Total: Rs. " + cost;
+			document.getElementById('dark-overlay').style.display="block";
+			document.getElementById('ticket-confirmation').style.display="block";
+		}
+		function countSeats() {
+			count = 0;
+			seats = document.getElementById("seat-selector");
+			rows = seats.children.length - 2;
+			cols = seats.children[0].children.length - 1;
+			for(i = 0;i < rows; i++) {
+				for(j = 0;j < cols; j++) {
+					if (seats.children[i].children[j].style.backgroundColor == "green")
+						count++;
+				}
+			}
+			return count;		
+		}
+		function printTicket() {
+			var printWindow = window.open('','Print Receipt','width=300,height=320');
+			printWindow.document.open();
+			printWindow.document.write('<html><head><title>Print Ticket Receipt</title><style>*{margin: 0;padding: 0;} body{font-family: Calibri, sans-serif;} #ticket-confirmation .ticket-content div {border-bottom: 1px dotted black;}#ticket-confirmation div span{text-align: right;float: right;}</style></head><body onload="window.print()" id="ticket-confirmation" style="height: 300px;width: 300px;background-color: white;">' + 
+				document.getElementById('ticket-body').innerHTML + '</body></html>')
+			printWindow.document.close();
+				
+		}
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<!-- Header -->
+			<div class="header">
+				<a href="index.html"><div class="header-logo">
+					<img alt="picture" class="header-logo-img" src="images/logo.gif" />
+					<div class="header-cinema">CINEMA</div>
+				</div></a>
+				<div class="header-quick-book">
+					<div class="dropdown-div"><!-- Movie Name -->
+						<input type="text" class="quickbook-input-box" id="select-movie-name" placeholder="Select Movie" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleMovieDropdown()">
+						<div class="dropdown-list" id="dropdown-movie-list">
+							<ul>
+								<li onClick="selectedMovie(this.innerHTML,1)">Dhoom: 3 (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML,2)">The Hobbit (3D) (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML,3)">Frozen (U)</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="dropdown-div"><!-- Movie Date -->
+						<input type="text" class="quickbook-input-box" id="select-movie-date" placeholder="Select Date" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleDateDropdown()">
+						<div class="dropdown-list" id="dropdown-date-list">
+							<ul>
+								<li onClick="selectedDate(this.innerHTML,1)">Wednesday, 25th December</li>
+								<li onClick="selectedDate(this.innerHTML,2)">Thursday, 26th December</li>
+								<li onClick="selectedDate(this.innerHTML,3)">Friday, 27th December</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<a href="javascript:window.location.href='movie.html?m='+m+'&d='+d"><div class="quick-book-submit">Book Now</div></a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+			<!-- Header close -->
+			<!-- Content body -->
+			<div class="content">
+				<div id="seat-selector">
+					<div class="r">
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="clearfix"></div>
+					</div>
+					<div class="r">
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="clearfix"></div>
+					</div>
+					<div class="r">
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="clearfix"></div>
+					</div>
+					<div class="r">
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="clearfix"></div>
+					</div>
+					<div class="r">
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="c" onclick="toggleSeat(this)"></div>
+						<div class="c" onclick="toggleSeat(this)"></div><div class="clearfix"></div>
+					</div>
+					<div class="clearfix screen"></div>
+				<div class="quick-book-submit clearfix" id="buy-tickets-submit" style="float: right" onclick="createReceipt()">Buy Tickets</div>
+				</div>
+			</div>
+			<!-- Content body close -->
+			<!-- Footer -->
+			<div class="footer">
+				<div class="copyright-notice">Copyright &copy; 2014 Spark Cinema. All Rights Reserved.</div>
+			</div>
+			<!-- Footer close -->
+		</div>
+		<div id="dark-overlay"></div>
+		<div id="ticket-confirmation" style="display: none;z-index: 100;height: 370px;width: 300px;position: fixed;top: 50%;left: 50%;margin-left: -150px;margin-top: -200px;background-color: white;">
+			<div id="ticket-body" style="height: 320px;position: relative;">
+				<div style="border-bottom: 1px dotted black;border-top: 1px dotted black;padding: 10px;">
+					<img alt="picture" style="display: block;width: 60px;margin: 0 auto;text-align: center;" src="images/logo.gif" />
+					<div style="text-align: center;font-size: 10pt;font-weight: bold;">C I N E M A</div>
+				</div>
+				<div style="margin-top: 20px;" class="ticket-content">
+					<div style="margin: 10px;font-size: 10pt;">Receipt No.: <span id="ticket-receipt-number">97644</span></div>
+					<div style="margin: 10px;font-size: 10pt;">Date of Purchase: <span id="ticket-todays-date">21/1/2014</span></div>
+					<div style="margin: 10px;font-size: 10pt;">Movie Name: <span id="ticket-movie-name">Dhoom: 3 (U/A)</span></div>
+					<div style="margin: 10px;font-size: 10pt;">Number of Seats: <span id="ticket-number-seats">1</span></div>
+					<div style="margin: 10px;font-size: 10pt;">Movie Date: <span id="ticket-movie-date">23/1/2014</span></div>
+					<div style="margin: 10px;font-size: 10pt;">Show Time: <span id="ticket-movie-time">1:45 PM</span></div>
+				</div>
+				<div id="total-cost" style="margin-top: 20px; margin-right: 10px; float: right; border-top: 1px dotted black;">Total: Rs. 100</div>
+			</div>
+			<div onclick="printTicket()" class="quick-book-submit" style="position: absolute;bottom: 5px; left: 10px;">Print</div>
+			<div onclick="closeTicketWindow()" class="quick-book-submit" style="position: absolute;bottom: 5px; right: 10px;">Cancel</div>
+		</div>
+	</body>
+</html>

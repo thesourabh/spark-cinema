@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Spark Cinema</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<meta name="keywords" content="Spark Cinemas, Movie Tickets, Online Booking, Online Movie Tickets" />
+		<meta name="description" content="Watch the latest movies at Spark Cinema. Book your tickets now." />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript">
+		
+		</script>
+	</head>
+	<body onload="datedate()">
+		<div class="main">
+			<!-- Header -->
+			<div class="header">
+				<a href="index.html"><div class="header-logo">
+					<img alt="picture" class="header-logo-img" src="images/logo.gif" />
+					<div class="header-cinema">CINEMA</div>
+				</div></a>
+				<div class="header-quick-book">
+					<div class="dropdown-div"><!-- Movie Name -->
+						<input type="text" class="quickbook-input-box" id="select-movie-name" placeholder="Select Movie" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleMovieDropdown()">
+						<div class="dropdown-list" id="dropdown-movie-list">
+							<ul>
+								<li onClick="selectedMovie(this.innerHTML)">Dhoom: 3 (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML)">The Hobbit (3D) (U/A)</li>
+								<li onClick="selectedMovie(this.innerHTML)">Frozen (U)</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="dropdown-div"><!-- Movie Date -->
+						<input type="text" class="quickbook-input-box" id="select-movie-date" placeholder="Select Date" readonly>
+						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleDateDropdown()">
+						<div class="dropdown-list" id="dropdown-date-list">
+							<ul>
+								<li onClick="selectedDate(this.innerHTML)">Wednesday, 25th December</li>
+								<li onClick="selectedDate(this.innerHTML)">Thursday, 26th December</li>
+								<li onClick="selectedDate(this.innerHTML)">Friday, 27th December</li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<a href="movie.html"><div class="quick-book-submit">Book Now</div></a>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+
+			</div>
+			<!-- Header close -->
+			<!-- Content body -->
+			<div class="content">
+				<div class="col fleft">
+					<h2>Now Showing</h2>
+					<a href="movie.html"><div class="movie-box"><img alt="picture" src="images/posters/00001.jpg" /></div></a>
+					<a href="#"><div class="movie-box"><img alt="picture" src="images/posters/00002.jpg" /></div></a>
+					<a href="#"><div class="movie-box"><img alt="picture" src="images/posters/00003.jpg" /></div></a>
+				</div>
+				<div class="col fright">
+					<h2>Coming Soon</h2>
+					<a href="#"><div class="movie-box"><img alt="picture" src="images/posters/00004.jpg" /></div></a>
+					<a href="#"><div class="movie-box"><img alt="picture" src="images/posters/00005.jpg" /></div></a>
+				</div>
+				<div class="col fleft">
+					<h2>Promotions</h2>
+					<a href="#"><div class="movie-box">
+					Student Deal*: Get 50% off by showing a valid student ID card from any recognized educational institution.
+					</div></a>
+					<a href="#"><div class="movie-box">
+					SBI Tuesdays*: Use your SBI Credit Card and get 1 movie ticket free on purchase of 2 on Tuesdays.
+					</div></a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<!-- Content body close -->
+			<!-- Footer -->
+			<div class="footer">
+				<div class="copyright-notice">Copyright &copy; 2013 Spark Cinema. All Rights Reserved.</div>
+			</div>
+			<!-- Footer close -->
+		</div>
+	</body>
+</html>
