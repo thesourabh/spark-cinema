@@ -26,7 +26,6 @@ if($row = mysqli_fetch_array($result))
 	$cast = $row['cast'];
 	$synopsis = $row['synopsis'];
 }
-mysqli_close($con);
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,6 +52,23 @@ mysqli_close($con);
 					<div class="clearfix">
 					<h4>Synopsis</h4>
 					<em><?php echo $synopsis; ?></em>
+					<h4>Review</h4>
+					<form action="reviewsaved.php" method="POST">
+					<input type="hidden" id="movie_num" name="movie_num" value="<?php echo $movie_num; ?>"	/>
+					<input type="text" id="username" placeholder="Your Name" style="padding: 5px;margin-bottom: 10px;" name="username"><br>
+					<textarea style="padding: 5px;"  rows="4" cols="20" id="review" name="review"></textarea>
+					<input type="submit" value="submit">
+					</form>
+<?php
+$sql = "SELECT * FROM review WHERE mid=" . $movie_num;
+$result = mysqli_query($con,$sql);
+while($row = mysqli_fetch_array($result))
+{
+echo '<h5 style="font-size: 1.3em">' . $row['user'] . '</h5>';
+echo '<p>' . $row['review'] . '</p>';
+}
+mysqli_close($con);
+?>
 					</div>
 				</div>
 				<div class="col fright show-times">
