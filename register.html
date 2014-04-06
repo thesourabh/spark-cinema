@@ -1,15 +1,15 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login - Spark Cinema</title>
+		
+		<title>Register / Login - Spark Cinema</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 		<meta name="keywords" content="Spark Cinemas, Movie Tickets, Online Booking, Online Movie Tickets" />
 		<meta name="description" content="Watch the latest movies at Spark Cinema. Book your tickets now." />
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css">
-		
-		<script type="text/javascript" src="script.js"></script>
-		<script type="text/javascript">
+		<script type="text/javascript" src="script.js"></script>		<script type="text/javascript">
 		function toggleLogin() {
 			var regDisp = document.getElementById('register-form');
 			if (regDisp.style.display == "block") {
@@ -76,45 +76,7 @@
 	</head>
 	<body>
 		<div class="main">
-			<!-- Header -->
-			<div class="header">
-				<a href="index.html"><div class="header-logo">
-					<img alt="picture" class="header-logo-img" src="images/logo.gif" />
-					<div class="header-cinema">CINEMA</div>
-				</div></a>
-				<div class="header-quick-book">
-					<div class="dropdown-div"><!-- Movie Name -->
-						<input type="text" class="quickbook-input-box" id="select-movie-name" placeholder="Select Movie" readonly>
-						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleMovieDropdown()">
-						<div class="dropdown-list" id="dropdown-movie-list">
-							<ul>
-								<li onClick="selectedMovie(this.innerHTML,1)">Dhoom: 3 (U/A)</li>
-								<li onClick="selectedMovie(this.innerHTML,2)">The Hobbit (3D) (U/A)</li>
-								<li onClick="selectedMovie(this.innerHTML,3)">Frozen (U)</li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="dropdown-div"><!-- Movie Date -->
-						<input type="text" class="quickbook-input-box" id="select-movie-date" placeholder="Select Date" readonly>
-						<img alt="picture" class="down-arrow" src="images/down-arrow.png" onClick="toggleDateDropdown()">
-						<div class="dropdown-list" id="dropdown-date-list">
-							<ul>
-								<li onClick="selectedDate(this.innerHTML,1)">Wednesday, 25th December</li>
-								<li onClick="selectedDate(this.innerHTML,2)">Thursday, 26th December</li>
-								<li onClick="selectedDate(this.innerHTML,3)">Friday, 27th December</li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<a href="javascript:window.location.href='movie.html?m='+m+'&d='+d"><div class="quick-book-submit">Book Now</div></a>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-
-			</div>
-			<!-- Header close -->
-			<!-- Content body -->
+			<!-- Header --><!-- Content body -->
 			<div class="content">
 				<div class="col">
 				<h2>Register Now</h2>
@@ -126,15 +88,6 @@
 						<div class="form-row">Password<input type="password" id="register-password"></div>
 						<div class="form-row">Confirm Password<input type="password" id="register-password-confirm"></div>
 						<a class="quick-book-submit clearfix" href="javascript:jsValidateForm(1);">Register</a>
-<<<<<<< HEAD
-				<form id="register-form" style="display: block;">
-					<div class="form-div">
-						<div class="form-row">Email<input type="text"></div>
-						<div class="form-row">Password<input type="password"></div>
-						<div class="form-row">Confirm Password<input type="password"></div>
-						<a class="quick-book-submit clearfix" href="javascript:toggleLogin();">Register</a>
-=======
->>>>>>> 1eef735030473a86ff1da342d7162f8dc1e63758
 					</div>
 				</form>
 				<form id="login-form" style="display: none;">
@@ -142,45 +95,16 @@
 						<div class="form-row">Email<input type="text" id="login-email"></div>
 						<div class="form-row">Password<input type="password" id="login-password"></div>
 						<a class="quick-book-submit clearfix" href="javascript:jsValidateForm(2);">Login</a>
-<<<<<<< HEAD
-						<div class="form-row">Email<input type="text"></div>
-						<div class="form-row">Password<input type="password"></div>
-						<a class="quick-book-submit clearfix" href="javascript:toggleLogin();">Login</a>
-=======
->>>>>>> 1eef735030473a86ff1da342d7162f8dc1e63758
 					</div>
 				</form>
 				</div>
 			</div>
 			<!-- Content body close -->
 			<!-- Footer -->
+			
 			<div class="footer">
 				<div class="copyright-notice">Copyright &copy; 2014 Spark Cinema. All Rights Reserved.</div>
-			</div>
-			<!-- Footer close -->
+			</div>			<!-- Footer close -->
 		</div>
-<<<<<<< HEAD
-		<div id="dark-overlay"></div>
-		<div id="ticket-confirmation" style="display: none;z-index: 100;height: 370px;width: 300px;position: fixed;top: 50%;left: 50%;margin-left: -150px;margin-top: -200px;background-color: white;">
-			<div id="ticket-body" style="height: 320px;position: relative;">
-				<div style="border-bottom: 1px dotted black;border-top: 1px dotted black;padding: 10px;">
-					<img alt="picture" style="display: block;width: 60px;margin: 0 auto;text-align: center;" src="images/logo.gif" />
-					<div style="text-align: center;font-size: 10pt;font-weight: bold;">C I N E M A</div>
-				</div>
-				<div style="margin-top: 20px;" class="ticket-content">
-					<div style="margin: 10px;font-size: 10pt;">Receipt No.: <span id="ticket-receipt-number">97644</span></div>
-					<div style="margin: 10px;font-size: 10pt;">Date of Purchase: <span id="ticket-todays-date">21/1/2014</span></div>
-					<div style="margin: 10px;font-size: 10pt;">Movie Name: <span id="ticket-movie-name">Dhoom: 3 (U/A)</span></div>
-					<div style="margin: 10px;font-size: 10pt;">Number of Seats: <span id="ticket-number-seats">1</span></div>
-					<div style="margin: 10px;font-size: 10pt;">Movie Date: <span id="ticket-movie-date">23/1/2014</span></div>
-					<div style="margin: 10px;font-size: 10pt;">Show Time: <span id="ticket-movie-time">1:45 PM</span></div>
-				</div>
-				<div id="total-cost" style="margin-top: 20px; margin-right: 10px; float: right; border-top: 1px dotted black;">Total: Rs. 100</div>
-			</div>
-			<div onclick="printTicket()" class="quick-book-submit" style="position: absolute;bottom: 5px; left: 10px;">Print</div>
-			<div onclick="closeTicketWindow()" class="quick-book-submit" style="position: absolute;bottom: 5px; right: 10px;">Cancel</div>
-		</div>
-=======
->>>>>>> 1eef735030473a86ff1da342d7162f8dc1e63758
-	</body>
+</body>
 </html>
